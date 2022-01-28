@@ -49,12 +49,12 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/auth', authRouter);
-app.use('/projects', projectsRouter);
-app.use('/projectSection', projectSectionRouter);
-app.use('/sectionItem', sectionItemRouter);
+app.use('/api', indexRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/projects', projectsRouter);
+app.use('/api/projectSection', projectSectionRouter);
+app.use('/api/sectionItem', sectionItemRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

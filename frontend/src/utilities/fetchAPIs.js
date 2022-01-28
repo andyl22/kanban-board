@@ -7,7 +7,7 @@ export function postHTTP(url, body) {
     },
   };
 
-  return fetch(url, options).then(res => {
+  return fetch(`/api${url}`, options).then(res => {
     if(res.ok) {
       return res.json();
     } else {
@@ -22,7 +22,7 @@ export function getHTTP(url) {
     method: "GET",
   };
 
-  return fetch(url, options).then(function (res) {
+  return fetch(`/api/${url}`, options).then(function (res) {
     if (res.ok) {
       return res.json();
     } else {
