@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-    networks:
-      - mern-network
     volumes:
       - ./frontend:/app
       - ./app/node_modules
@@ -27,14 +25,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3001:3001
-    networks:
-      - mern-network
     volumes:
       - ./backend:/app/backend
     environment:
       - CLIENT=http://localhost:3000
     command: npm start
-
-networks:
-  mern-network:
-    driver: bridge

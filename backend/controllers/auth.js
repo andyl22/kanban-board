@@ -8,7 +8,6 @@ exports.login = function (req, res, next) {
     if (err || !user) {
       return res.json({ error: info.message });
     }
-
     req.login(user, { session: false }, (err) => {
       if (err) res.send(err);
       generateAndSetAuthTokens({ id: user.id }, res);
