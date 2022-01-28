@@ -2,6 +2,6 @@ build:
   docker:
     web: frontend/Dockerfile
     backend: backend/Dockerfile
-  run:
-    web: npm run build
-    backend: npm run start
+run:
+  web: npm run build
+  backend: npm run start
