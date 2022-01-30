@@ -1,9 +1,12 @@
-FROM node:14.16.0-alpine3.10
-WORKDIR /app/
+FROM node:14-slim
+WORKDIR /app
 
-COPY package*.json ./
+COPY package.json ./
+COPY package-lock.json ./
+
 RUN npm install
 
-COPY . .
+COPY . ./
+
 EXPOSE 3001
 CMD [ "npm", "start" ]

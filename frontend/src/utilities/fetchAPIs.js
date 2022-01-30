@@ -22,7 +22,7 @@ export function getHTTP(url) {
     method: "GET",
   };
 
-  return fetch(`/api/${url}`, options).then(function (res) {
+  return fetch(`/api${url}`, options).then(function (res) {
     if (res.ok) {
       return res.json();
     } else {

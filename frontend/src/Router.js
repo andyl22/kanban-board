@@ -9,9 +9,9 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/kanban-board" element={<KanbanBoardPage />} />
-        <Route exact path="/kanban-board/about" element={<About />} />
-        <Route exact path="/kanban-board/settings" element={<Settings />} />
+        <Route exact path="/" element={<KanbanBoardPage />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/settings" element={<Settings />} />
         <Route eaxct path="/kanban-board/project/:id" element={<KanbanBoardPage />} />
       </Routes>
     </BrowserRouter>

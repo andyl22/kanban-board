@@ -30,12 +30,12 @@ export default function DropdownUser(props) {
   return (
     <Dropdown dropDownName={currentUser.username}>
       <button css={dropdownOption}>
-        <Link to="/kanban-board/profile" id="settings">
+        <Link to="/profile" id="settings">
           Profile
         </Link>
       </button>
       <button css={dropdownOption}>
-        <Link to="/kanban-board/settings" id="settings">
+        <Link to="/settings" id="settings">
           Settings
         </Link>
       </button>

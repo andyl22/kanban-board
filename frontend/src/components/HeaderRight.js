@@ -77,10 +77,10 @@ export default function HeaderRight() {
 
   const rightHeaderLinks = (
     <>
-      <Link to="/kanban-board" id="home">
+      <Link to="/" id="home">
         Kanban Board
       </Link>
-      <Link to="/kanban-board/about" id="about">
+      <Link to="/about" id="about">
         About
       </Link>
     </>
