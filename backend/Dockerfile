@@ -1,12 +1,12 @@
 FROM node:14-slim
 WORKDIR /app
 
-COPY package.json ./
-COPY package-lock.json ./
+COPY package.json /app
+COPY package-lock.json /app
 
 RUN npm install
 
-COPY . ./
+COPY . .
 
 EXPOSE 3001
 CMD [ "npm", "start" ]
