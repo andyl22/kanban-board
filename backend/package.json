@@ -15,7 +15,6 @@
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
-    "express-session": "^1.17.2",
     "http-errors": "~1.6.3",
     "http-proxy-middleware": "^2.0.2",
     "jsonwebtoken": "^8.5.1",
@@ -29,6 +28,7 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "express-session": "^1.17.2",
     "nodemon": "^2.0.15"
   }
 }

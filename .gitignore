@@ -1,12 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # Docker
-
 /frontend/Dockerfile
 /frontend/.dockerignore
 /backend/Dockerfile
 /backend/.dockerignore
 dockercompose.yml
+
 # dependencies
 /frontend/build
 /frontend/node_modules
