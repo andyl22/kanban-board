@@ -54,7 +54,7 @@ export default function ToggleButton(props) {
     right: ${buttonStatus ? "0.3em" : null};
     animation: ${allowAnimate
       ? css`
-          ${animation} 0.2s ease-in
+          ${animation} 0.1s ease-in
         `
       : null};
     height: 80%;
