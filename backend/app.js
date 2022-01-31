@@ -47,7 +47,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
   console.log("Production");
   app.use(express.static(path.join(__dirname, "../frontend/build")));
   app.get("/", (req, res) => {
