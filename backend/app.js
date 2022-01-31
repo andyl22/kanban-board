@@ -1,7 +1,10 @@
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
-const session = require("cookie-session");
+const session =
+  process.env.NODE_ENV === "production"
+    ? require("cookie-session")
+    : require("express-session");
 var passport = require("passport");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
@@ -53,16 +56,16 @@ app.use(
   })
 );
 
-// 
+//
 
 if (process.env.NODE_ENV === "production") {
-  console.log("Production")
+  console.log("Production");
   app.use(express.static(path.join(__dirname, "../frontend/build")));
   app.get("/", (req, res) => {
     res.sendFile(path.join((__dirname = "../frontend/build/index.html")));
   });
 } else {
-  console.log("Development")
+  console.log("Development");
   app.use(express.static(path.join(__dirname, "public")));
   app.use("/", indexRouter);
 }

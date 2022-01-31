@@ -72,7 +72,7 @@ export default function HeaderRight() {
     Cookies.remove("darkMode");
     if (darkMode) toggleDarkMode();
     fetch("/auth/logout", { method: "POST" });
-    navigate("/kanban-board");
+    navigate("/");
   };
 
   const rightHeaderLinks = (

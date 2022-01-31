@@ -27,7 +27,7 @@ export default function DeleteSectionController(props) {
   return (
     <ModalDeleteConfirm
       deleteObject={deleteSection}
-      sectionName={section.name}
+      itemName={section.name}
       toggleModal={toggleModal}
     />
   );

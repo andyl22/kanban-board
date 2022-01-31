@@ -30,7 +30,7 @@ export default function DropdownUser(props) {
   return (
     <Dropdown dropDownName={currentUser.username}>
       <button css={dropdownOption}>
-        <Link to="/profile" id="settings">
+        <Link to="/settings" id="profile">
           Profile
         </Link>
       </button>
@@ -45,3 +45,4 @@ export default function DropdownUser(props) {
     </Dropdown>
   );
 }
+
