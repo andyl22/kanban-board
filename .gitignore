@@ -5,7 +5,7 @@
 /frontend/.dockerignore
 /backend/Dockerfile
 /backend/.dockerignore
-dockercompose.yml
+docker-compose.yml
 
 # dependencies
 /frontend/build

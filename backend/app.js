@@ -8,7 +8,6 @@ const session =
 var passport = require("passport");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var sassMiddleware = require("node-sass-middleware");
 var mongoose = require("mongoose");
 const passportConfig = require("./config/passportAuthenticate");
 
@@ -47,18 +46,8 @@ app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(
-  sassMiddleware({
-    src: path.join(__dirname, "public"),
-    dest: path.join(__dirname, "public"),
-    indentedSyntax: true, // true = .sass and false = .scss
-    sourceMap: true,
-  })
-);
 
-//
-
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV !== "production") {
   console.log("Production");
   app.use(express.static(path.join(__dirname, "../frontend/build")));
   app.get("/", (req, res) => {
