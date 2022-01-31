@@ -1,0 +1,8 @@
+{
+  "name": "kanban-board",
+  "version": "1.0.0",
+  "description": "Package for heroku",
+  "scripts": {
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cd ../backend && npm install && npm start"
+  }
+}
