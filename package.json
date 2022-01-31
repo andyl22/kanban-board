@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Package for heroku",
   "scripts": {
-	"start": "cd backend && node ./bin/www"
+	"start": "cd backend && node ./bin/www",
     "heroku-postbuild": "cd frontend && npm install && npm run build"
   }
 }
