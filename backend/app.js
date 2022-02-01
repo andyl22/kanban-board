@@ -50,7 +50,7 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === "production") {
   console.log("Production");
   app.use(express.static(path.join(__dirname, "../frontend/build")));
-  app.get("/", (req, res) => {
+  app.get("/kanban-board/", (req, res) => {
     res.sendFile(path.join((__dirname = "../frontend/build/index.html")));
   });
 } else {
