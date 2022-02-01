@@ -8,7 +8,7 @@ import FormUpdateProjectName from "./FormUpdateProjectName";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-export default function ProjectHeaderLeft(props) {
+export default function ProjectHeaderContent(props) {
   const { headerTitle, toggleConfirmDelete } = props;
   const [showEdit, setShowEdit] = useState(false);
   const [header, setHeader] = useState(headerTitle);

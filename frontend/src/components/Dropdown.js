@@ -38,7 +38,6 @@ export default function Dropdown(props) {
   const dropDown = css`
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
     position: absolute;
     top: 2.5em;
     right: 0;
@@ -51,7 +50,7 @@ export default function Dropdown(props) {
   `;
 
   return (
-    <div css={dropDownContainer}>
+    <div css={dropDownContainer} aria-expanded={showDropDown}>
       <button css={userProfile} onClick={toggleDropdown} aria-label="User Management Dropdown">
         <p>{dropDownName}</p>
         <ArrowDropDownIcon />

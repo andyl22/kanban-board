@@ -71,11 +71,18 @@ export default function ToggleButton(props) {
 
   return (
     <div css={toggleButtonContainer}>
-      <label htmlFor="darkMode">Dark Mode</label>
-      <div css={checkbox}>
+      <label htmlFor="darkMode" aria-hidden="true">
+        Dark Mode
+      </label>
+      <switch css={checkbox}>
         <div css={checkboxIndicator}></div>
-        <input type="checkbox" id="darkMode" onChange={toggleButton} />
-      </div>
+        <input
+          type="checkbox"
+          id="darkMode"
+          onChange={toggleButton}
+          aria-checked={buttonStatus}
+        />
+      </switch>
     </div>
   );
 }

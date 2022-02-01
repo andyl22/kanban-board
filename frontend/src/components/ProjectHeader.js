@@ -4,12 +4,12 @@
 import { css, jsx } from "@emotion/react";
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeProvider";
-import ProjectHeaderLeft from "./ProjectHeaderLeft";
+import ProjectHeaderContent from "./ProjectHeaderContent";
 import DeleteProjectController from "./DeleteProjectController";
 
 export default function ProjectHeader(props) {
   const { headerTitle } = props;
-  const { colors } = useContext(ThemeContext);
+  const { colors, mq } = useContext(ThemeContext);
   const [showModalDelete, setShowModalDelete] = useState(false);
 
   const projectHeader = css`
@@ -21,6 +21,9 @@ export default function ProjectHeader(props) {
     box-shadow: 0px 0px 10px ${colors.headerShadowColor};
     color: ${colors.basicFontColor};
     font-weight: 600;
+    ${mq[0]} {
+      justify-content: center;
+    }
   `;
 
   const toggleConfirmDelete = () => {
@@ -30,7 +33,7 @@ export default function ProjectHeader(props) {
   return (
     <>
       <div css={projectHeader}>
-        <ProjectHeaderLeft
+        <ProjectHeaderContent
           headerTitle={headerTitle}
           showModalDelete={showModalDelete}
           toggleConfirmDelete={toggleConfirmDelete}
