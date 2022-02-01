@@ -62,7 +62,7 @@ app.use("/api/projects", projectsRouter);
 app.use("/api/projectSection", projectSectionRouter);
 app.use("/api/sectionItem", sectionItemRouter);
 if(process.env.NODE_ENV === "production") {
-  app.get("*", (req, res) => {
+  app.get("/*", (req, res) => {
     res.sendFile(path.join((__dirname = "../frontend/build/index.html")));
   });
 }
