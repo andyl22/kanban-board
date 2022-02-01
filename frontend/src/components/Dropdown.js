@@ -21,6 +21,8 @@ export default function Dropdown(props) {
 
   const userProfile = css`
     display: flex;
+    border: none;
+    background: none;
     align-items: center;
     color: ${colors.linkFontColor};
     &:hover {
@@ -50,11 +52,11 @@ export default function Dropdown(props) {
 
   return (
     <div css={dropDownContainer}>
-      <div css={userProfile} onClick={toggleDropdown}>
+      <button css={userProfile} onClick={toggleDropdown} aria-label="User Management Dropdown">
         <p>{dropDownName}</p>
-        <ArrowDropDownIcon/>
-      </div>
-      {showDropDown ? <div css={dropDown}> {children} </div> : null}
+        <ArrowDropDownIcon />
+      </button>
+      {showDropDown ? <span css={dropDown}> {children} </span> : null}
     </div>
   );
 }

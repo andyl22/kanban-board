@@ -30,7 +30,7 @@ export default function AddSectionController() {
     <FormCreateSection toggleForm={toggleForm} />
   ) : (
     <div css={addSectionButton}>
-      <ButtonAdd onClickAction={toggleForm} css/>
+      <ButtonAdd onClickAction={toggleForm} ariaLabel="Add a new section" />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { css, jsx } from "@emotion/react";
 import IconAdd from "./IconAdd";
 
 export default function buttonAdd(props) {
-  const { onClickAction, customCSS } = props
+  const { onClickAction, ariaLabel } = props
 
   const button = css`
     background: none;
@@ -14,7 +14,7 @@ export default function buttonAdd(props) {
   `;
 
   return (
-    <button onClick={onClickAction} css={button}>
+    <button onClick={onClickAction} css={button} aria-label={ariaLabel}>
       <IconAdd />
     </button>
   );

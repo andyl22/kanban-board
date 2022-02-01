@@ -105,10 +105,10 @@ export default function HeaderRight() {
 
   return (
     <>
-      <div css={rightHeader}>
+      <nav css={rightHeader}>
         {rightHeaderLinks}
         {conditionalRendering}
-      </div>
+      </nav>
       {showLogin ? <ModalLogin toggleModal={toggleLoginModal} /> : null}
       {showRegister ? (
         <ModalRegister toggleModal={toggleRegisterModal} />

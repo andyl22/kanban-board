@@ -21,7 +21,11 @@ export default function ProjectHeaderLeft(props) {
   `;
 
   const button = css`
+    display: flex;
+    align-items: center;
     color: ${colors.iconColor};
+    background: none;
+    border: none;
     &:hover {
       cursor: pointer;
       color: ${colors.iconHoverColor};
@@ -43,8 +47,12 @@ export default function ProjectHeaderLeft(props) {
       ) : (
         <>
           {header}
-          <EditIcon fontSize="small" css={button} onClick={toggleEdit} />
-          <DeleteForeverIcon fontSize="small" css={button} onClick={toggleConfirmDelete} />
+          <button css={button} aria-label="Edit Project Name">
+            <EditIcon fontSize="small" onClick={toggleEdit} />
+          </button>
+          <button css={button} aria-label="Delete Project">
+            <DeleteForeverIcon fontSize="small" onClick={toggleConfirmDelete} />
+          </button>
         </>
       )}
     </div>

@@ -23,7 +23,10 @@ export default function AddSectionController(props) {
     <FormCreateSectionItem toggleForm={toggleForm} sectionID={sectionID} />
   ) : (
     <div css={addSectionItemButtonContainer}>
-      <ButtonAdd onClickAction={toggleForm} />
+      <ButtonAdd
+        onClickAction={toggleForm}
+        ariaLabel="Add a new section item"
+      />
     </div>
   );
 }

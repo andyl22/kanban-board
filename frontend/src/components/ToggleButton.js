@@ -71,7 +71,7 @@ export default function ToggleButton(props) {
 
   return (
     <div css={toggleButtonContainer}>
-      <label htmlFor="dark-mode">Dark Mode</label>
+      <label htmlFor="darkMode">Dark Mode</label>
       <div css={checkbox}>
         <div css={checkboxIndicator}></div>
         <input type="checkbox" id="darkMode" onChange={toggleButton} />

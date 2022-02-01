@@ -2,7 +2,7 @@
 /** @jsx jsx */
 
 import { css, jsx, keyframes } from "@emotion/react";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { SidebarContext } from "../context/SidebarProvider";
 import { ThemeContext } from "../context/ThemeProvider";
 import { UserContext } from "../context/UserProvider";
@@ -72,7 +72,11 @@ export default function LeftHeader(props) {
         showSidebar ? null : (
           <>
             {id === undefined ? <span css={highlight}></span> : null}
-            <button css={expandButton} onClick={toggleSidebar}>
+            <button
+              css={expandButton}
+              onClick={toggleSidebar}
+              aria-label="Project List Dropdown"
+            >
               <ExpandMoreIcon fontSize="small" />
             </button>
           </>

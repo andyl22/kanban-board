@@ -40,6 +40,8 @@ export default function SectionHeader(props) {
 
   const buttons = css`
     color: black;
+    border: none;
+    background: none;
     &:hover {
       cursor: pointer;
       color: gray;
@@ -59,12 +61,12 @@ export default function SectionHeader(props) {
       <div css={sectionHeader}>
         <h1 css={text}>{section.name}</h1>
         <div css={buttonsContainer}>
-          <EditIcon fontSize="small" css={buttons} onClick={toggleEdit} />
-          <DeleteForeverIcon
-            fontSize="small"
-            css={buttons}
-            onClick={toggleDelete}
-          />
+          <button aria-label="Edit Section" css={buttons}>
+            <EditIcon fontSize="small" onClick={toggleEdit} />
+          </button>
+          <button aria-label="Delete Section and Items" css={buttons}>
+            <DeleteForeverIcon fontSize="small" onClick={toggleDelete} />
+          </button>
         </div>
       </div>
       {showDelete ? (

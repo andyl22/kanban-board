@@ -3,6 +3,7 @@
 
 import { css, jsx } from "@emotion/react";
 import FormSettings from "./FormSettings";
+import ThemeButton from "./ThemeButton";
 
 export default function SettingsMenu() {
   const settingsMenu = css`
@@ -28,6 +29,7 @@ export default function SettingsMenu() {
     <main css={settingsMenu}>
       <section css={settingsContainer}>
         <FormSettings />
+        <ThemeButton />
       </section>
     </main>
   );

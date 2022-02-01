@@ -22,23 +22,24 @@ export default function SidebarProject() {
       .catch((err) => setError("Could not retrieve projects."));
   }, [setProjectList]);
 
+  const projectLinks = css`
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    margin-bottom: 1em;
+    a {
+      font-size: .8em;
+      padding: 0.8em 0.5em;
+      width: 100%;
+    }
+    &:hover {
+      transform: translateX(2px);
+      transition: 0.15s ease;
+    }
+  `;
+
   useEffect(() => {
     if (projectList) {
-      const projectLinks = css`
-        font-weight: 700;
-        padding: 0.8em 0.5em;
-        width: 100%;
-        &:first-of-type {
-        }
-        &:last-of-type {
-          margin-bottom: 1em;
-        }
-        &:hover {
-          transform: translateX(2px);
-          transition: 0.15s ease;
-        }
-      `;
-
       const mapProjectList = (projectList) => {
         const sortProjectList = (projectList) => {
           return [...projectList].sort((a, b) => {
@@ -59,7 +60,6 @@ export default function SidebarProject() {
             to={`/kanban-board/project/${project._id}`}
             id={project._id}
             key={project._id}
-            css={projectLinks}
           >
             {project.name}
           </Link>
@@ -76,7 +76,7 @@ export default function SidebarProject() {
         <p>{error}</p>
       ) : (
         <>
-          {mappedProjectList}
+          <nav css={projectLinks}>{mappedProjectList}</nav>
           <AddProjectController />
         </>
       )}

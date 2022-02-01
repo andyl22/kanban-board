@@ -19,8 +19,6 @@ export default function ThemeButton() {
   };
 
   return (
-    <div>
-      <ToggleButton buttonState={buttonState} handleChange={changeTheme} />
-    </div>
+    <ToggleButton buttonState={buttonState} handleChange={changeTheme} />
   );
 }

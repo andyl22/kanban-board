@@ -34,27 +34,15 @@ export default function Sidebar(props) {
   `;
 
   const sidebar = css`
-    flex: 0;
-    display: flex;
     padding: 1em;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: fit-content;
     background: ${colors.sideBarBackground};
     box-shadow: 0px 5px 5px gray;
     overflow: auto;
-    border-right: 1px solid gray;
     animation: ${rolloutX} 0.1s ease-in;
     h1,
     a,
     button {
-      animation: ${textoutX} 0.1s ease-in;
-    }
-    h1 {
-      padding: 0 0 1em 0;
-    }
-    a {
-      font-size: 0.8em;
+      animation: ${textoutX} 0.2s ease-in;
     }
     &::-webkit-scrollbar {
       border-bottom-right-radius: 2em;
@@ -78,24 +66,28 @@ export default function Sidebar(props) {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: .8em;
-  `
+    gap: 0.8em;
+  `;
 
   const arrowBack = css`
-  color: ${colors.iconColor};
-  transform: scale(0.8);
-  &:hover {
-    cursor: pointer;
-    color: ${colors.iconHoverColor};
-  }
-`
+    color: ${colors.iconColor};
+    background: none;
+    border: none;
+    transform: scale(0.8);
+    &:hover {
+      cursor: pointer;
+      color: ${colors.iconHoverColor};
+    }
+  `;
 
   if (showSidebar) {
     return (
       <section css={sidebar}>
-        <div css={sidebarHeader} >
+        <div css={sidebarHeader}>
           <h1>{title}</h1>
-          <ArrowBackIcon onClick={toggleSidebar} css={arrowBack}/>
+          <button css={arrowBack}>
+            <ArrowBackIcon onClick={toggleSidebar} font-size="small" />
+          </button>
         </div>
         {children}
       </section>

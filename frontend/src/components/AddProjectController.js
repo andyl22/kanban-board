@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 
-import { css, jsx } from "@emotion/react";
+import { jsx } from "@emotion/react";
 import { useState } from "react";
 import ButtonAdd from "./ButtonAdd";
 import FormCreateProject from "./FormCreateProject";
@@ -16,6 +16,6 @@ export default function AddProjectController() {
   return showCreateProject ? (
     <FormCreateProject toggleForm={toggleForm} />
   ) : (
-    <ButtonAdd onClickAction={toggleForm} />
+    <ButtonAdd onClickAction={toggleForm} ariaLabel="Add a new project" />
   );
 }

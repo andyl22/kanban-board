@@ -11,11 +11,12 @@ export default function DragHandle(props) {
     justify-content: center;
     background: #f2f2f2;
     color: gray;
+    border: none;
   `
 
   return (
-    <div {...props} css={dragHandle}>
+    <button {...props} css={dragHandle} aria-label="Drag items">
       <DragIndicatorIcon/>
-    </div>
+    </button>
   )
 }
