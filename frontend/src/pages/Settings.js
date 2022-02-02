@@ -4,7 +4,7 @@ import SettingsMenu from "../components/SettingsMenu";
 export default function Settings() {
   return (
     <>
-      <Header activeTab={"about"} title={"About"} />
+      <Header title={"About"} />
       <SettingsMenu />
     </>
   );

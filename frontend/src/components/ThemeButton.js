@@ -18,7 +18,5 @@ export default function ThemeButton() {
     toggleDarkMode();
   };
 
-  return (
-    <ToggleButton buttonState={buttonState} handleChange={changeTheme} />
-  );
+  return <ToggleButton buttonState={buttonState} handleChange={changeTheme} />;
 }

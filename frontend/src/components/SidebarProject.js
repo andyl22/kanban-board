@@ -32,10 +32,6 @@ export default function SidebarProject() {
       padding: 0.8em 0.5em;
       width: 100%;
     }
-    &:hover {
-      transform: translateX(2px);
-      transition: 0.15s ease;
-    }
   `;
 
   useEffect(() => {

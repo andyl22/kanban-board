@@ -9,18 +9,43 @@ import { ThemeContext } from "../context/ThemeProvider";
 import { postHTTP } from "../utilities/fetchAPIs";
 import { ProjectContext } from "../context/ProjectProvider";
 import { useNavigate } from "react-router-dom";
+import { SectionsContext } from "../context/SectionsProvider";
 
 export default function FormCreateProject(props) {
   const { toggleForm } = props;
-  const { projectList, setProjectList} = useContext(ProjectContext)
+  const { dispatch } = useContext(SectionsContext);
+  const { projectList, setProjectList } = useContext(ProjectContext);
   const [formState, setFormState] = useState({ projectName: "" });
   const inputRef = useRef();
   const { colors } = useContext(ThemeContext);
   const navigate = useNavigate();
 
-  const addProject = (project) => {
-    setProjectList([...projectList, project]);
-    navigate(`/kanban-board/project/${project._id}`);
+  const addSections = (project) => {
+    const sectionsToAdd = [
+      { sectionName: "Planned", color: "white" },
+      { sectionName: "In Progress", color: "#f7b72b" },
+      { sectionName: "Completed", color: "#4eff5a" },
+    ];
+
+    Promise.all(
+      sectionsToAdd.forEach((section) => {
+        postHTTP("/projectSection/createSection", {
+          projectID: project._id,
+          sectionName: section.sectionName,
+          color: section.color,
+        })
+          .then((res) => {
+            dispatch({
+              type: "ADDSECTION",
+              sectionDetail: res.section,
+              sectionID: res.section._id,
+            });
+          })
+          .catch((err) => console.log(err));
+      })
+    )
+      .then(setProjectList([...projectList, project]))
+      .then(navigate(`/kanban-board/project/${project._id}`));
   };
 
   const container = css`
@@ -47,7 +72,7 @@ export default function FormCreateProject(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     postHTTP("/projects/createProject", formState)
-      .then((res) => addProject(res.project))
+      .then((res) => addSections(res.project))
       .catch((err) => console.log(err));
     toggleForm();
   };

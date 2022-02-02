@@ -43,13 +43,6 @@ export default function DropdownUser(props) {
       <ul css={listStyle}>
         <li>
           <button css={dropdownOption}>
-            <Link to="/settings" id="profile">
-              Profile
-            </Link>
-          </button>
-        </li>
-        <li>
-          <button css={dropdownOption}>
             <Link to="/settings" id="settings">
               Settings
             </Link>

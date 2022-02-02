@@ -10,17 +10,18 @@ import HeaderRight from "./HeaderRight";
 
 export default function Header(props) {
   const { colors, mq } = useContext(ThemeContext);
-  const { currentUser } = useContext(UserContext);
   const { title, activeTab } = props;
 
   useEffect(() => {
-    document
-      .getElementById(activeTab)
-      .setAttribute(
-        "style",
-        `border-bottom: 2px solid ${colors.linkFontColor}`
-      );
-  }, [currentUser, activeTab, colors.linkFontColor]);
+    if (activeTab) {
+      document
+        .getElementById(activeTab)
+        .setAttribute(
+          "style",
+          `border-bottom: 2px solid ${colors.linkFontColor}`
+        );
+    }
+  }, [activeTab, colors.linkFontColor]);
 
   const header = css`
     border-bottom: 2px solid #f2f2f2;

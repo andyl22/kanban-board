@@ -83,6 +83,4 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-console.log(process.env.PORT, process.env.SECRET);
-
 module.exports = app;

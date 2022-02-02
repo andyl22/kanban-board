@@ -73,7 +73,6 @@ export default function Sidebar(props) {
     color: ${colors.iconColor};
     background: none;
     border: none;
-    transform: scale(0.8);
     &:hover {
       cursor: pointer;
       color: ${colors.iconHoverColor};
@@ -86,7 +85,7 @@ export default function Sidebar(props) {
         <div css={sidebarHeader}>
           <h1>{title}</h1>
           <button css={arrowBack}>
-            <ArrowBackIcon onClick={toggleSidebar} font-size="small" />
+            <ArrowBackIcon onClick={toggleSidebar} fontSize="small" />
           </button>
         </div>
         {children}

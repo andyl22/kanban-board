@@ -15,7 +15,7 @@ export default function ToggleButton(props) {
     gap: 0.5em;
   `;
 
-  const checkbox = css`
+  const switchButton = css`
     display: flex;
     align-items: center;
     height: 30px;
@@ -49,7 +49,7 @@ export default function ToggleButton(props) {
   }
 `;
 
-  const checkboxIndicator = css`
+  const onOffIndicator = css`
     position: absolute;
     right: ${buttonStatus ? "0.3em" : null};
     animation: ${allowAnimate
@@ -74,15 +74,15 @@ export default function ToggleButton(props) {
       <label htmlFor="darkMode" aria-hidden="true">
         Dark Mode
       </label>
-      <switch css={checkbox}>
-        <div css={checkboxIndicator}></div>
+      <button css={switchButton} aria-label="Switch Button">
+        <div css={onOffIndicator}></div>
         <input
           type="checkbox"
           id="darkMode"
           onChange={toggleButton}
           aria-checked={buttonStatus}
         />
-      </switch>
+      </button>
     </div>
   );
 }
