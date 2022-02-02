@@ -20,32 +20,28 @@ export default function FormCreateProject(props) {
   const { colors } = useContext(ThemeContext);
   const navigate = useNavigate();
 
-  const addSections = (project) => {
+  const addSections = async (project) => {
+    setProjectList([...projectList, project]);
+
     const sectionsToAdd = [
       { sectionName: "Planned", color: "white" },
       { sectionName: "In Progress", color: "#f7b72b" },
       { sectionName: "Completed", color: "#4eff5a" },
     ];
 
-    Promise.all(
-      sectionsToAdd.forEach((section) => {
-        postHTTP("/projectSection/createSection", {
-          projectID: project._id,
-          sectionName: section.sectionName,
-          color: section.color,
-        })
-          .then((res) => {
-            dispatch({
-              type: "ADDSECTION",
-              sectionDetail: res.section,
-              sectionID: res.section._id,
-            });
-          })
-          .catch((err) => console.log(err));
-      })
-    )
-      .then(setProjectList([...projectList, project]))
-      .then(navigate(`/kanban-board/project/${project._id}`));
+    for (const section of sectionsToAdd) {
+      await createSection(project, section);
+    }
+
+    navigate(`/kanban-board/project/${project._id}`);
+  };
+
+  const createSection = (project, section) => {
+    return postHTTP("/projectSection/createSection", {
+      projectID: project._id,
+      sectionName: section.sectionName,
+      color: section.color,
+    }).then((res) => res.section);
   };
 
   const container = css`

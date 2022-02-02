@@ -10,6 +10,7 @@ import ModalLogin from "./ModalLogin";
 import ModalRegister from "./ModalRegister";
 import DropdownUser from "./DropdownUser";
 import Cookies from "js-cookie";
+import { postHTTP } from "../utilities/fetchAPIs";
 
 export default function HeaderRight() {
   const { darkMode, toggleDarkMode, colors, mq } = useContext(ThemeContext);
@@ -27,7 +28,7 @@ export default function HeaderRight() {
     padding: 0 1em;
     font-size: 0.8em;
     a {
-      color: ${colors.linkFontColor};
+      color: ${colors.basicFontColor};
       &:hover {
         color: ${colors.linkHoverColor};
       }
@@ -71,7 +72,7 @@ export default function HeaderRight() {
     Cookies.remove("user");
     Cookies.remove("darkMode");
     if (darkMode) toggleDarkMode();
-    fetch("/auth/logout", { method: "POST" });
+    postHTTP("/auth/logout", { method: "POST" });
     navigate("/");
   };
 

@@ -17,7 +17,7 @@ export default function DeleteProjectController(props) {
   const deleteProject = () => {
     postHTTP("/projects/deleteProject", { id: id })
       .then(setProjectList(projectList.filter((project) => project._id !== id)))
-      .then(navigate("/kanban-board"))
+      .then(navigate("/"))
       .catch((err) => console.log(err));
   };
 

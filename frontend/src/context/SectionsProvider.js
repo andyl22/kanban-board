@@ -31,11 +31,21 @@ const SectionsProvider = ({ children }) => {
         return { ...sections, sectionDetails: action.sectionDetails };
       case "ADDSECTION":
         // dispatch({type:'ADDSECTION', sectionDetail: section})
-        return {
-          ...sections,
-          sectionDetails: [...sections.sectionDetails, action.sectionDetail],
-          itemsList: [...sections.itemsList, {sectionID: action.sectionID, items: []}]
-        };
+        if (!sections) {
+          return {
+            sectionDetails: [action.sectionDetail],
+            itemsList: [{ sectionID: action.sectionDetail._id, items: [] }],
+          };
+        } else {
+          return {
+            ...sections,
+            sectionDetails: [...sections.sectionDetails, action.sectionDetail],
+            itemsList: [
+              ...sections.itemsList,
+              { sectionID: action.sectionID, items: [] },
+            ],
+          };
+        }
       case "EDITSECTION":
         return (() => {
           const copyOfSections = createDeepCopy(sections.sectionDetails);
@@ -98,7 +108,10 @@ const SectionsProvider = ({ children }) => {
     }
   };
 
-  const [sections, dispatch] = useReducer(reducer, null);
+  const [sections, dispatch] = useReducer(reducer, {
+    sectionDetails: [{}],
+    sectionItems: [{}],
+  });
 
   return (
     <SectionsContext.Provider value={{ sections, dispatch }}>
