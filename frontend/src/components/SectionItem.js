@@ -22,7 +22,6 @@ export default function SectionItem(props) {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-bottom: 1.5em;
   `;
 
   const SectionItem = (snapshot) => {
@@ -30,8 +29,8 @@ export default function SectionItem(props) {
       display: flex;
       background: white;
       height: fit-content;
-      width: 90%;
-      border-radius: 1em;
+      width: 95%;
+      border-radius: 0.3em;
       border: ${snapshot.isDragging
         ? "1px dashed red"
         : showButtons
@@ -68,10 +67,9 @@ export default function SectionItem(props) {
             {...provided.draggableProps}
             css={SectionItem(snapshot)}
             ref={provided.innerRef}
-            onClick={toggleButtons}
           >
             <DragHandle {...provided.dragHandleProps} />
-            <SectionItemContent item={item} />
+            <SectionItemContent item={item} onClick={toggleButtons} />
           </div>
         )}
       </Draggable>

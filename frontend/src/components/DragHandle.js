@@ -15,8 +15,8 @@ export default function DragHandle(props) {
   `
 
   return (
-    <button {...props} css={dragHandle} aria-label="Drag items">
+    <div {...props} css={dragHandle} role="button" aria-label="Drag items">
       <DragIndicatorIcon/>
-    </button>
+    </div>
   )
 }

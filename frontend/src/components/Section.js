@@ -15,7 +15,7 @@ export default function Section(props) {
   const [mappedSectionItems, setMappedSectionItems] = useState(null);
   const { colors, mq } = useContext(ThemeContext);
   const { sections } = useContext(SectionsContext);
-  
+
   const rolloutY = keyframes`
   0% {
     opacity: 0;
@@ -52,7 +52,8 @@ export default function Section(props) {
     flex-direction: column;
     align-items: center;
     width: 280px;
-    padding-top: 2em;
+    padding-top: .5em;
+    gap: .5em;
     background: ${snapshot.isDraggingOver ? "#c0e4ff" : "white"};
     ${mq[0]} {
       width: 100%;
@@ -76,7 +77,7 @@ export default function Section(props) {
 
   return (
     <section id={section._id} css={sectionContainer}>
-      <SectionHeader section={section}/>
+      <SectionHeader section={section} />
       <Droppable droppableId={section._id}>
         {(provided, snapshot) => (
           <div

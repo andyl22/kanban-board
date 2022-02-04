@@ -54,7 +54,7 @@ export default function Modal(props) {
   };
 
   return (
-    <div id="modal-container" css={modal} onClick={closeModal}>
+    <div id="modal-container" css={modal} onMouseDown={closeModal}>
       <div id="modal-content" css={modalContent}>
         {children}
       </div>

@@ -35,6 +35,7 @@ export default function Sidebar(props) {
 
   const sidebar = css`
     padding: 1em;
+    min-width: 220px;
     background: ${colors.sideBarBackground};
     box-shadow: 0px 5px 5px gray;
     overflow: auto;

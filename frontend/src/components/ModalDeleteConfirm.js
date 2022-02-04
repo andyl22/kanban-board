@@ -14,6 +14,7 @@ export default function ModalDeleteConfirm(props) {
     align-items: center;
     padding: 1em;
     p {
+      color: black;
       word-break: break-word;
     }
   `;
@@ -38,7 +39,7 @@ export default function ModalDeleteConfirm(props) {
     <Modal toggleModal={toggleModal}>
       <ModalHeader title="Confirm Delete" toggleModal={toggleModal} />
       <div css={modalContentContainer}>
-        <p>{`Are you sure you want to delete ${itemName}?`}</p>
+        <p>{`Are you sure you want to delete "${itemName}?"`}</p>
         <div css={deleteConfirmButtonContainer}>
           <button onClick={deleteObject}>Confirm</button>
           <button onClick={toggleModal}>Cancel</button>

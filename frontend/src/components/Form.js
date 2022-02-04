@@ -15,7 +15,6 @@ export default function Form(props) {
     flex-direction: column;
     gap: 0.5em;
     font-size: 0.8em;
-    padding: 1em;
     p {
       word-wrap: break-word;
       color: red !important;

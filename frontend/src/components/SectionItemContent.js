@@ -7,7 +7,7 @@ import { ThemeContext } from "../context/ThemeProvider";
 import moment from "moment";
 
 export default function SectionItemContent(props) {
-  const { item } = props;
+  const { item, onClick } = props;
   const { colors, mq } = useContext(ThemeContext);
 
   const sectionItemContent = css`
@@ -44,7 +44,7 @@ export default function SectionItemContent(props) {
   `;
 
   return (
-    <div css={sectionItemContent}>
+    <div css={sectionItemContent} onClick={onClick}>
       <h2>{item.name}</h2>
       <p>Description: {item.description}</p>
       <p>Created: {moment(item.date_of_creation).fromNow()}</p>

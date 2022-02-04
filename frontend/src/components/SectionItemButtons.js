@@ -21,10 +21,9 @@ export default function SectionItemButton(props) {
   const manipulateItemButtons = css`
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 15px;
     display: flex;
     justify-content: flex-end;
-    width: 100%;
     transform: scale(0.8);
   `;
 
@@ -39,15 +38,13 @@ export default function SectionItemButton(props) {
   `;
 
   return (
-    <div>
-      <div css={manipulateItemButtons}>
-        <button css={button} onClick={showEditModal}>
-          <EditIcon fontSize="small" />
-        </button>
-        <button css={button} onClick={showDeleteModal}>
-          <DeleteForeverIcon fontSize="small" />
-        </button>
-      </div>
+    <div css={manipulateItemButtons}>
+      <button css={button} onClick={showEditModal}>
+        <EditIcon fontSize="small" />
+      </button>
+      <button css={button} onClick={showDeleteModal}>
+        <DeleteForeverIcon fontSize="small" />
+      </button>
     </div>
   );
 }

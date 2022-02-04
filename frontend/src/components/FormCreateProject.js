@@ -9,11 +9,9 @@ import { ThemeContext } from "../context/ThemeProvider";
 import { postHTTP } from "../utilities/fetchAPIs";
 import { ProjectContext } from "../context/ProjectProvider";
 import { useNavigate } from "react-router-dom";
-import { SectionsContext } from "../context/SectionsProvider";
 
 export default function FormCreateProject(props) {
   const { toggleForm } = props;
-  const { dispatch } = useContext(SectionsContext);
   const { projectList, setProjectList } = useContext(ProjectContext);
   const [formState, setFormState] = useState({ projectName: "" });
   const inputRef = useRef();
@@ -24,7 +22,7 @@ export default function FormCreateProject(props) {
     setProjectList([...projectList, project]);
 
     const sectionsToAdd = [
-      { sectionName: "Planned", color: "white" },
+      { sectionName: "Planned", color: "#FFFFFF" },
       { sectionName: "In Progress", color: "#f7b72b" },
       { sectionName: "Completed", color: "#4eff5a" },
     ];
