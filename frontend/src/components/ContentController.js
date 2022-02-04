@@ -34,13 +34,7 @@ export default function ContentController() {
     padding: 1em 0;
     text-align: center;
     font-weight: 600;
-    font-size: 2em;
-    ${mq[1]} {
-      font-size: 1.5em;
-    }
-    ${mq[0]} {
-      font-size: 1em;
-    }
+    font-size: 1em;
   `;
 
   const loadingAnimation = keyframes`
@@ -117,7 +111,7 @@ export default function ContentController() {
   // IIFE used to render elements based on whether the user is logged in, there is an active project, or if there is an error retrieving projects
   const conditionalRenderingLogic = (function () {
     if (!currentUser) {
-      return <p css={textContent}>Please sign in to access your projects.</p>;
+      return <p css={textContent}>Please sign in to access your projects. <br /> You can use "DemoUser/pass" if you'd prefer not to register.</p>;
     } else if (!id) {
       return <p css={textContent}>Select a project in the dropdown menu.</p>;
     } else if (loading) {
