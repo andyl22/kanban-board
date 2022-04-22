@@ -2,9 +2,10 @@
 /** @jsx jsx */
 
 import { css, jsx, keyframes } from "@emotion/react";
+import ModalHeader from "./ModalHeader";
 
 export default function Modal(props) {
-  const { toggleModal, children } = props;
+  const { toggleModal, title, children } = props;
   const maxZ =
     Array.from(document.querySelectorAll("body *"))
       .map((a) => window.getComputedStyle(a).zIndex)
@@ -33,20 +34,28 @@ export default function Modal(props) {
     transform: translateY(0px)
 `;
 
-  const modalContent = css`
+  const modalBox = css`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 1em;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: none;
     margin: 0 auto;
     max-width: 300px;
     width: 90%;
     min-width: 250px;
     text-align: center;
-    background: white;
-    overflow: hidden;
     animation: ${rolloutAnimation} 1s ease;
+  `;
+
+  const modalContent = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 100%;
   `;
 
   const closeModal = (e) => {
@@ -55,8 +64,9 @@ export default function Modal(props) {
 
   return (
     <div id="modal-container" css={modal} onMouseDown={closeModal}>
-      <div id="modal-content" css={modalContent}>
-        {children}
+      <div id="modal-content" css={modalBox}>
+        <ModalHeader toggleModal={toggleModal} title={title} />
+        <div css={modalContent}>{children}</div>
       </div>
     </div>
   );

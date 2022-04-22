@@ -23,8 +23,8 @@ export default function FormCreateProject(props) {
 
     const sectionsToAdd = [
       { sectionName: "Planned", color: "#FFFFFF" },
-      { sectionName: "In Progress", color: "#f7b72b" },
-      { sectionName: "Completed", color: "#4eff5a" },
+      { sectionName: "In Progress", color: "#ffe5ac" },
+      { sectionName: "Completed", color: "#95ff9c" },
     ];
 
     for (const section of sectionsToAdd) {

@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+
+  frontend:
+    build: 
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - mern
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  backend:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    networks:
+      - mern
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+  
+networks:
+
+  mern:
+    driver: bridge

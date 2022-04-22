@@ -28,7 +28,7 @@ export default function SidebarProject() {
     font-weight: 600;
     margin-bottom: 1em;
     a {
-      font-size: .8em;
+      font-size: 0.8em;
       padding: 0.8em 0.5em;
       width: 100%;
     }

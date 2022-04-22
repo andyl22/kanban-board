@@ -31,7 +31,7 @@ const ThemeProvider = ({ children }) => {
         buttonHover: "#0f46ff",
         shadowColor: "#919191",
         scrollbar: "#5668ff",
-        headerColor: "#ffce1c",
+        headerColor: "#ff9872b8",
         headerShadowColor: "#a9a9a9",
       }
     : {
@@ -49,8 +49,8 @@ const ThemeProvider = ({ children }) => {
         buttonHover: "#6100cc",
         shadowColor: "#363636",
         scrollbar: "#ffb62f",
-        headerColor: "#5d0099",
-        headerShadowColor: "#8b8b8b",
+        headerColor: "#ff9872b8",
+        headerShadowColor: "gray",
       };
 
   const breakpoints = [475, 720];

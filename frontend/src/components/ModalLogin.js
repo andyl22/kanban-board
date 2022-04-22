@@ -4,7 +4,6 @@
 import { css, jsx } from "@emotion/react";
 import Modal from "./Modal";
 import FormLogin from "./FormLogin";
-import ModalHeader from "./ModalHeader";
 
 export default function ModalLogin(props) {
   const { toggleModal } = props;
@@ -13,8 +12,7 @@ export default function ModalLogin(props) {
   `;
 
   return (
-    <Modal toggleModal={toggleModal}>
-      <ModalHeader title={"Log In"} toggleModal={toggleModal} />
+    <Modal title={"Log In"} toggleModal={toggleModal}>
       <div css={formPadding}>
         <FormLogin toggleModal={toggleModal} />
       </div>

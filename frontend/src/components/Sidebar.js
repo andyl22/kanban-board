@@ -37,7 +37,7 @@ export default function Sidebar(props) {
     padding: 1em;
     min-width: 220px;
     background: ${colors.sideBarBackground};
-    box-shadow: 0px 5px 5px gray;
+    box-shadow: 0px 5px 5px ${colors.shadow};
     overflow: auto;
     animation: ${rolloutX} 0.1s ease-in;
     h1,

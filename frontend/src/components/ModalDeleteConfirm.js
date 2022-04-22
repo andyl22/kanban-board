@@ -3,7 +3,6 @@
 
 import { css, jsx } from "@emotion/react";
 import Modal from "./Modal";
-import ModalHeader from "./ModalHeader";
 
 export default function ModalDeleteConfirm(props) {
   const { itemName, toggleModal, deleteObject } = props;
@@ -14,7 +13,7 @@ export default function ModalDeleteConfirm(props) {
     align-items: center;
     padding: 1em;
     p {
-      color: black;
+      color: black !important;
       word-break: break-word;
     }
   `;
@@ -25,8 +24,8 @@ export default function ModalDeleteConfirm(props) {
     padding: 1em 0 0 0;
     button {
       border: 1px solid #cdcdcd;
-      border-radius: 1em;
-      padding: 0.2em 1em;
+      border-radius: 0.5rem;
+      padding: 0.2rem 1rem;
       font-weight: 600;
       &:hover {
         cursor: pointer;
@@ -36,8 +35,7 @@ export default function ModalDeleteConfirm(props) {
   `;
 
   return (
-    <Modal toggleModal={toggleModal}>
-      <ModalHeader title="Confirm Delete" toggleModal={toggleModal} />
+    <Modal title="Confirm Delete" toggleModal={toggleModal}>
       <div css={modalContentContainer}>
         <p>{`Are you sure you want to delete "${itemName}?"`}</p>
         <div css={deleteConfirmButtonContainer}>

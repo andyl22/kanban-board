@@ -4,7 +4,6 @@
 import { css, jsx } from "@emotion/react";
 import Modal from "./Modal";
 import FormRegister from "./FormRegister";
-import ModalHeader from "./ModalHeader";
 
 export default function ModalRegister(props) {
   const { toggleModal } = props;
@@ -13,8 +12,7 @@ export default function ModalRegister(props) {
   `;
 
   return (
-    <Modal toggleModal={toggleModal}>
-      <ModalHeader title={"Register"} toggleModal={toggleModal} />
+    <Modal title={"Register"} toggleModal={toggleModal}>
       <div css={formPadding}>
         <FormRegister toggleModal={toggleModal} />
       </div>
