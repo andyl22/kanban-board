@@ -31,7 +31,7 @@ export default function ModalHeader(props) {
   return (
     <div css={header}>
       <h1>{title}</h1>
-      <CancelIcon css={button} onClick={toggleModal} />
+      <CancelIcon fontSize="small" css={button} onClick={toggleModal} />
     </div>
   );
 }

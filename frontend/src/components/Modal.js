@@ -23,12 +23,12 @@ export default function Modal(props) {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
   `;
 
   const rolloutAnimation = keyframes`
   0% {
-    transform: translateY(-100px)
+    transform: translateY(-20px)
   }
   100% {
     transform: translateY(0px)
@@ -39,7 +39,7 @@ export default function Modal(props) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     overflow: hidden;
     background: none;
     margin: 0 auto;

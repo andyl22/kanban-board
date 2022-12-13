@@ -23,13 +23,13 @@ export default function FormCreateSectionItem(props) {
 
   const container = css`
     display: flex;
-    padding: 0.5em 1em;
+    padding: 1rem 1rem;
+    border: 1px solid #cccccc;
     gap: 0.5em;
     border-radius: 0.5em;
     align-items: center;
     height: fit-content;
     width: fit-content;
-    background: #f2f2f2;
     margin: 1em 0 2em 0;
     ${mq[1]} {
       width: 95%;
@@ -37,6 +37,13 @@ export default function FormCreateSectionItem(props) {
   `;
 
   const closeButton = css`
+    position: relative;
+    bottom: 45px;
+    left: 10px;
+    background: none;
+    border: none;
+    color: ${colors.iconColor}
+    top: 0;
     &:hover {
       cursor: pointer;
       color: ${colors.iconHoverColor};
@@ -84,9 +91,11 @@ export default function FormCreateSectionItem(props) {
           id="itemDescription"
           onChange={handleChange}
         />
-        <input type="submit"/>
+        <input type="submit" />
       </Form>
-      <CancelIcon fontSize="small" css={closeButton} onClick={toggleForm} />
+      <button css={closeButton} onClick={toggleForm}>
+        <CancelIcon fontSize="small" />
+      </button>
     </div>
   );
 }
